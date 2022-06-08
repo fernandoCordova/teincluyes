@@ -1,4 +1,4 @@
-# LASTHIT
+# teincluyes
 ## Descripción y objetivo
 ***
 Desarrollar una solución tecnológica interactiva, mediante tecnologías emergentes, la cual permita apoyar la inclusión laboral de personas con capacidades diferentes.
