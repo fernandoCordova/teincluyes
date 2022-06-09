@@ -1,0 +1,32 @@
+#Opciones para reescritura de la configuracion del servidor con htaccess
+Options +FollowSymLinks
+RewriteEngine on
+
+#Evitar que se puedan listar la estructura de la pagina
+Options -Indexes
+
+#Definir una pagina de index
+DirectoryIndex views/inicio/inicio.php
+
+#Rutas para las vistas
+RewriteRule ^inicio$ views/inicio/inicio.php
+RewriteRule ^inicioSesion$ views/inicioSesion/inicioSesion.php
+RewriteRule ^registro/usuario$ views/registro/registroUsuario.php
+RewriteRule ^registro/empresa$ views/registro/registroEmpresa.php
+RewriteRule ^curriculum$ views/curriculum/curriculum.php
+RewriteRule ^foro$ views/foro/foro.php
+RewriteRule ^trabajo$ views/trabajo/trabajo.php
+
+#Rutas para los controladores
+RewriteRule ^controladorInicio$ controller/InicioController.php
+RewriteRule ^controladorInicioSesion$ controller/InicioSesionController.php
+RewriteRule ^controladorRegistro$ controller/RegistroController.php
+RewriteRule ^controladorCurriculum$ controller/CurriculumController.php
+RewriteRule ^controladorForo$ controller/ForoController.php
+RewriteRule ^controladorTrabajo$ controller/TrabajoController.php
+
+#Bloqueo a archivos
+<files BDConfiguracion.php>
+order allow,deny
+deny from all
+</files>

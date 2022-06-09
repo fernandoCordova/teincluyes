@@ -1,0 +1,69 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.estilos-navbar {
+  background-color: #3b4fbf;
+}
+
+.imagen-navbar {
+  width: 15rem;
+  height: 3rem;
+  object-fit: cover;
+  object-position: 60% 50%;
+  margin: 0.2rem;
+}
+
+.botones-navbar {
+  background-color: transparent;
+  border: transparent;
+  color: #f2f2f2;
+}
+
+.botones-navbar:hover {
+  background-color: transparent;
+  color: #c2c2c2;
+}
+
+.botones-dropdown-navbar {
+  background-color: transparent;
+  border: transparent;
+  color: #0d0d0d;
+}
+
+.botones-dropdown-navbar:hover {
+  background-color: transparent;
+  color: #434bd9;
+}
+
+.estilos-footer {
+  background-color: #3b4fbf;
+}
+
+.estilo-header {
+  background-color: #434bd9;
+}
+
+.botones {
+  background-color: #686ee0;
+  border-color: #434bd9;
+  color: #f2f2f2;
+}
+
+.botones:hover {
+  background-color: #24276c;
+  border-color: #24276c;
+  color: #f2f2f2;
+}
+
+.botones-enlace {
+  background-color: transparent;
+  border-color: transparent;
+  color: #f2f2f2;
+}
+
+.botones-enlace:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #c2c2c2;
+}
