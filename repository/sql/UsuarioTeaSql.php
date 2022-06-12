@@ -1,6 +1,16 @@
 <?php
 class UsuarioTeaSql
 {
+
+    public function obtenerIdUsuarioTea($datos, $conexion)
+    {
+        $sql = $conexion->prepare('SELECT idusuarioTea FROM usuariotea WHERE usuario_idusuario = :idusuario');
+        $sql->bindparam(':idusuario', $datos['idusuario']);
+        $sql->execute();
+        $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
     public function insertarUsuarioTea($usuarioTea, $conexion)
     {
         $espectro = $usuarioTea->getEspectro();

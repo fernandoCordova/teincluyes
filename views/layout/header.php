@@ -16,6 +16,11 @@
     <link href="http://localhost/teincluyes/css/plantilla-usuario/styles.css" rel="stylesheet" />
     <!-- Estilos personalizados-->
     <link href="http://localhost/teincluyes/css/plantilla-usuario/estilos-personalizados.css" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -53,12 +58,12 @@
                                     </li>
                                 </form>
                                 <li class="nav-item dropdown">
-                                    <a class="btn botones-navbar dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i> 
-                                    <?php echo $_SESSION['usuario']['nombres'] ?></a>
+                                    <a class="btn botones-navbar dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
+                                        <?php echo $_SESSION['usuario']['nombres'] ?></a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                                         <form action="http://localhost/teincluyes/controladorCurriculum" method="post">
                                             <li class="nav-item">
-                                                <button class="btn botones-dropdown-navbar" name="btnRegistro" value="registroUsuario">
+                                                <button class="btn botones-dropdown-navbar" name="btnCurriculum" value="curriculum">
                                                     <i class="bi bi-file-pdf"></i> Curriculum
                                                 </button>
                                             </li>
@@ -90,8 +95,8 @@
                                     </li>
                                 </form>
                                 <li class="nav-item dropdown">
-                                    <a class="btn botones-navbar dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i> 
-                                    <?php echo $_SESSION['usuario']['nombres'] ?></a>
+                                    <a class="btn botones-navbar dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
+                                        <?php echo $_SESSION['usuario']['nombres'] ?></a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
                                         <form action="" method="post">
                                             <li class="nav-item">

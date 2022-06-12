@@ -6,13 +6,16 @@ if (isset($_POST['btnRegistro'])) {
     include_once('../repository/sql/UsuarioSql.php');
     include_once('../repository/sql/UsuarioTeaSql.php');
     include_once('../repository/sql/UsuarioEmpresaSql.php');
+    include_once('../repository/sql/CurriculumSql.php');
     include_once('../model/Usuario.php');
     include_once('../model/UsuarioTea.php');
     include_once('../model/UsuarioEmpresa.php');
+    include_once('../model/Curriculum.php');
     $objetoConexion = new BDConfiguracion();
     $objetoUsuario = new UsuarioSql();
     $objetoUsuarioTea = new UsuarioTeaSql();
     $objetoUsuarioEmpresa = new UsuarioEmpresaSql();
+    $objetoCurriculum = new CurriculumSql();
     $create = new DateTime();
     $conexion = $objetoConexion->obtenerConexion();
     $accion = $_POST['btnRegistro'];
@@ -61,8 +64,20 @@ if (isset($_POST['btnRegistro'])) {
                                     $usuarioTea = new UsuarioTea($_POST['espectro'], $idusuario, $idCertificadoTea);
                                     $insertarUsuarioTea = $objetoUsuarioTea->insertarUsuarioTea($usuarioTea, $conexion);
                                     if ($insertarUsuarioTea == 1) {
-                                        $_SESSION['exito'] = 'Usuario registrado correctamente';
-                                        header('Location: http://localhost/teincluyes/inicioSesion');
+                                        $datosObtenerUsuarioTea = [
+                                            'idusuario' => $idusuario,
+                                        ];
+                                        $obtenerIdUsuarioTea = $objetoUsuarioTea->obtenerIdUsuarioTea($datosObtenerUsuarioTea, $conexion);
+                                        $idUsuarioTea = $obtenerIdUsuarioTea['idusuarioTea'];
+                                        $curriculum = new Curriculum('', '', '', '', '', '', '', '', '', '', '1', '1', '1', $idUsuarioTea);
+                                        $insertarCurriculum = $objetoCurriculum->insertarCurriculum($curriculum, $conexion);
+                                        if ($insertarCurriculum == 1) {
+                                            $_SESSION['exito'] = 'Usuario registrado correctamente';
+                                            header('Location: http://localhost/teincluyes/inicioSesion');
+                                        } else {
+                                            $_SESSION['error'] = 'Error al registrar curriculum';
+                                            header('Location: http://localhost/teincluyes/registro/usuario');
+                                        }
                                     } else {
                                         $_SESSION['error'] = 'Error al registrar usuario';
                                         header('Location: http://localhost/teincluyes/registro/usuario');

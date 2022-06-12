@@ -14,6 +14,13 @@ RewriteRule ^inicioSesion$ views/inicioSesion/inicioSesion.php
 RewriteRule ^registro/usuario$ views/registro/registroUsuario.php
 RewriteRule ^registro/empresa$ views/registro/registroEmpresa.php
 RewriteRule ^curriculum$ views/curriculum/curriculum.php
+RewriteRule ^informacionPersonal/editar$ views/curriculum/informacionPersonal.php
+RewriteRule ^experienciaLaboral/agregar$ views/curriculum/experenciaLaboral/experienciaLaboralAgregar.php
+RewriteRule ^experienciaLaboral/editar$ views/curriculum/experenciaLaboral/experienciaLaboralEditar.php
+RewriteRule ^formacionAcademica/agregar$ views/curriculum/formacionAcademica/formacionAcademicaAgregar.php
+RewriteRule ^formacionAcademica/editar$ views/curriculum/formacionAcademica/formacionAcademicaEditar.php
+RewriteRule ^habilidad/agregar$ views/curriculum/habilidad/habilidadAgregar.php
+RewriteRule ^idioma/agregar$ views/curriculum/idioma/idiomaAgregar.php
 RewriteRule ^foro$ views/foro/foro.php
 RewriteRule ^trabajo$ views/trabajo/trabajo.php
 
