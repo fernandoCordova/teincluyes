@@ -12,7 +12,18 @@ $(function () {
     $(".situacion").prop("hidden", false);
     $(".fechaInicio").prop("hidden", false);
     $(".fechaTermino").prop("hidden", false);
-  } else {
+  } else if ($("#nivelEstudio").val() == 'opcionInicial') {
+    $(".pais").prop("hidden", true);
+    $("#pais").select2();
+    $(".institucion").prop("hidden", true);
+    $(".sede").prop("hidden", true);
+    $(".carrera").prop("hidden", true);
+    $(".mencion").prop("hidden", true);
+    $(".modalidad").prop("hidden", true);
+    $(".situacion").prop("hidden", true);
+    $(".fechaInicio").prop("hidden", true);
+    $(".fechaTermino").prop("hidden", true);
+  }else {
     $(".pais").prop("hidden", false);
     $("#pais").select2();
     $(".institucion").prop("hidden", false);

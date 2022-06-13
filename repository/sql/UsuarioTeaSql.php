@@ -2,6 +2,33 @@
 class UsuarioTeaSql
 {
 
+    public function cambiarEstadoUsuario($idestado, $idusuario, $conexion)
+    {
+        $sql = $conexion->prepare('UPDATE usuario SET estado_idestado = :idestado WHERE idusuario = :idusuario');
+        $sql->bindParam(':idestado', $idestado);
+        $sql->bindParam(':idusuario', $idusuario);
+        if ($sql->execute()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public function obtenerUsuariosTea($conexion)
+    {
+        $sql = $conexion->prepare('SELECT *
+        FROM usuariotea
+        INNER JOIN usuario
+        ON usuariotea.usuario_idusuario = usuario.idusuario
+        INNER JOIN certificadotea
+        ON usuariotea.certificadoTea_idcertificadoTea = certificadotea.idcertificadoTea
+        INNER JOIN estado
+        ON usuario.estado_idestado = estado.idestado');
+        $sql->execute();
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
     public function obtenerIdUsuarioTea($datos, $conexion)
     {
         $sql = $conexion->prepare('SELECT idusuarioTea FROM usuariotea WHERE usuario_idusuario = :idusuario');

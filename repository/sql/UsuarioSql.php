@@ -70,7 +70,8 @@ class UsuarioSql
         INNER JOIN nivelestudio
         ON formacionacademica.nivelEstudio_idnivelEstudio = nivelestudio.idnivelEstudio
         WHERE curriculum_idcurriculum = :idcurriculum');
-        $sql->execute(['idcurriculum' => $idcurriculum['idcurriculum']]);
+        $sql->bindParam(':idcurriculum', $idcurriculum);
+        $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;
     }
@@ -98,7 +99,10 @@ class UsuarioSql
 
     public function obtenerDatosUsuarioEmpresa($datosObtenerUsuario, $conexion)
     {
-        $sql = $conexion->prepare('SELECT * FROM usuario WHERE idusuario = :idusuario');
+        $sql = $conexion->prepare('SELECT * FROM usuario 
+        INNER JOIN usuarioempresa
+        ON usuarioempresa.usuario_idusuario = usuario.idusuario
+        WHERE idusuario = :idusuario');
         $sql->bindParam(':idusuario', $datosObtenerUsuario['idusuario']);
         $sql->execute();
         $resultado = $sql->fetch(PDO::FETCH_ASSOC);

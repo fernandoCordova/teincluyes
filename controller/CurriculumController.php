@@ -216,7 +216,7 @@ if (isset($_POST['btnCurriculum'])) {
                     $datosObtenerUsuarioTea = [
                         'idusuario' => $_SESSION['usuario']['idusuario'],
                     ];
-                    if ($_POST['sede'] != '') {
+                    if ($_POST['sede'] != 'opcionInicial' || $_POST['sede'] != '') {
                         $sede = $_POST['sede'];
                     } else {
                         $sede = 1;

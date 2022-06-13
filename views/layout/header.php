@@ -21,6 +21,9 @@
     <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -89,7 +92,7 @@
                                 </form>
                                 <form action="http://localhost/teincluyes/controladorTrabajo" method="post">
                                     <li class="nav-item">
-                                        <button class="btn botones-navbar" name="btnIniciarSesion" value="inicioSesion">
+                                        <button class="btn botones-navbar" name="btnOfertaLaboral" value="publicarTrabajo">
                                             <i class="bi bi-chat"></i> Publicar trabajo
                                         </button>
                                     </li>
@@ -98,9 +101,9 @@
                                     <a class="btn botones-navbar dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
                                         <?php echo $_SESSION['usuario']['nombres'] ?></a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
-                                        <form action="" method="post">
+                                        <form action="http://localhost/teincluyes/controladorTrabajo" method="post">
                                             <li class="nav-item">
-                                                <button class="btn botones-dropdown-navbar" name="btnRegistro" value="registroUsuario">
+                                                <button class="btn botones-dropdown-navbar" name="btnOfertaLaboral" value="empresa">
                                                     <i class="bi bi-building"></i> Empresa
                                                 </button>
                                             </li>
@@ -124,10 +127,10 @@
                                         </button>
                                     </li>
                                 </form>
-                                <form action="" method="post">
+                                <form action="http://localhost/teincluyes/controladorAdministrador" method="post">
                                     <li class="nav-item">
-                                        <button class="btn botones-navbar" name="btnIniciarSesion" value="inicioSesion">
-                                            <i class="bi bi-speedometer2"></i> Panel de control
+                                        <button class="btn botones-navbar" name="btnAdministrador" value="validarCertificados">
+                                            <i class="bi bi-speedometer2"></i> Validar certificados
                                         </button>
                                     </li>
                                 </form>

@@ -34,7 +34,7 @@ if (isset($_POST['btnIniciarSesion'])) {
                         $idCurriculum = $objetoCurriculumSql->obtenerIdCurriculum($idUsuarioTea['idusuarioTea'], $conexion);
                         $obtenerExperienciasLaboralesUsuariosTea = $objetoUsuarioSql->obtenerExperienciasLaboralesUsuariosTea($idCurriculum, $conexion);
                         $_SESSION['experienciasLaborales'] = $obtenerExperienciasLaboralesUsuariosTea;
-                        $obtenerFormacionAcademica = $objetoUsuarioSql->obtenerFormacionAcademica($idCurriculum, $conexion);
+                        $obtenerFormacionAcademica = $objetoUsuarioSql->obtenerFormacionAcademica($idCurriculum['idcurriculum'], $conexion);
                         $_SESSION['formacionAcademica'] = $obtenerFormacionAcademica;
                         $obtenerHabilidades = $objetoUsuarioSql->obtenerHabilidad($idCurriculum['idcurriculum'], $conexion);
                         $_SESSION['habilidades'] = $obtenerHabilidades;

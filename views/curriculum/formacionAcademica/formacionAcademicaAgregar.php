@@ -53,7 +53,6 @@ $regiones = $_SESSION['regiones'];
                             <div class="mb-3 mb-md-0">
                                 <label for="sede">Region sede de la institucion</label>
                                 <select class="form-select" name="sede" id="sede">
-                                    <option value="opcionInicial">Seleccione una opcion</option>
                                     <?php
                                     foreach ($regiones as $region) { ?>
                                         <option value="<?php print_r($region['idregion']) ?>">

@@ -22,8 +22,12 @@ RewriteRule ^formacionAcademica/editar$ views/curriculum/formacionAcademica/form
 RewriteRule ^habilidad/agregar$ views/curriculum/habilidad/habilidadAgregar.php
 RewriteRule ^idioma/agregar$ views/curriculum/idioma/idiomaAgregar.php
 RewriteRule ^foro$ views/foro/foro.php
-RewriteRule ^trabajo$ views/trabajo/trabajo.php
-
+RewriteRule ^trabajo/publicarTrabajo$ views/trabajo/empresa/publicarTrabajo.php
+RewriteRule ^trabajo/verPostulantes$ views/trabajo/empresa/verPostulantes.php
+RewriteRule ^trabajo/verPerfilPostulante$ views/trabajo/empresa/verPerfilPostulante.php
+RewriteRule ^empresa/verDetallesOfertaLaboral$ views/trabajo/empresa/verOfertaLaboral.php
+RewriteRule ^empresa/perfil$ views/trabajo/empresa/empresa.php
+RewriteRule ^administrador/certificados$ views/administrador/validarCertificados.php
 #Rutas para los controladores
 RewriteRule ^controladorInicio$ controller/InicioController.php
 RewriteRule ^controladorInicioSesion$ controller/InicioSesionController.php
@@ -31,6 +35,7 @@ RewriteRule ^controladorRegistro$ controller/RegistroController.php
 RewriteRule ^controladorCurriculum$ controller/CurriculumController.php
 RewriteRule ^controladorForo$ controller/ForoController.php
 RewriteRule ^controladorTrabajo$ controller/TrabajoController.php
+RewriteRule ^controladorAdministrador$ controller/AdministradorController.php
 
 #Bloqueo a archivos
 <files BDConfiguracion.php>
