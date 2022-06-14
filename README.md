@@ -6,9 +6,9 @@ Desarrollar una solución tecnológica interactiva, mediante tecnologías emerge
 ***
 Estado: En desarrollo.
 * inicio: pendiente.
-* Modulo login: pendiente
-* Modulo registro: pendiente
-* Modulo cv: pendiente
+* Modulo login: Finalizado
+* Modulo registro: Finalizado
+* Modulo cv: Finalizado
 * Modulo foro: pendiente
 * Modulo publicar ofertar laborales: pendiente
 ## Tecnologias
