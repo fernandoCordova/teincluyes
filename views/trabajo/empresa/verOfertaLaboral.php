@@ -11,7 +11,7 @@ $ofertaLaboral = $_SESSION['ofertaLaboralEspecifica'];
                     <h2>
                         <?php echo $ofertaLaboral[0]['titulo'] ?>
                     </h2>
-                    <h6><?php echo $_SESSION['usuario']['nombreEmpresa'] ?></h6>
+                    <h6><?php echo $ofertaLaboral[0]['nombreEmpresa'] ?></h6>
                 </div>
                 <div>
                     <h4> <strong>Informacion general</strong></h4>
@@ -41,6 +41,18 @@ $ofertaLaboral = $_SESSION['ofertaLaboralEspecifica'];
                     <h4> <strong>Beneficios</strong></h4>
                     <h5>Sueldo + (bonos si es que incluye): <?php echo $ofertaLaboral[0]['sueldo'] ?></h5>
                 </div>
+                <?php if ($_SESSION['usuario']['tipoUsuario_idtipoUsuario'] == 1) { ?>
+                    <hr>
+                    <div>
+                        <form action="http://localhost/teincluyes/controladorTrabajo" method="post">
+                            <button class="btn botones" type="submit" name="btnOfertaLaboral" value="postularOfertaLaboral">
+                                Postular a la oferta
+                            </button>
+                            <input type="hidden" name="idCurriculum" value="<?php echo $_SESSION['usuario']['idcurriculum'] ?>">
+                            <input type="hidden" name="idOfertaLaboral" value="<?php echo $ofertaLaboral[0]['idofertaLaboral']  ?>">
+                        </form>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

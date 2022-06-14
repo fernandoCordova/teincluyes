@@ -11,9 +11,26 @@ class OfertaLaboralSql
         return $resultado;
     }
 
+    public function ingresarPostulacionLaboral($idCurriculum, $idOfertaLaboral, $fechaPostulacion, $conexion)
+    {
+        $sql = $conexion->prepare("INSERT INTO postulacion (curriculum_idcurriculum,ofertaLaboral_idofertaLaboral,fecha) VALUES (:curriculum_idcurriculum,:ofertaLaboral_idofertaLaboral,:fecha)");
+        $sql->bindParam(':curriculum_idcurriculum', $idCurriculum);
+        $sql->bindParam(':ofertaLaboral_idofertaLaboral', $idOfertaLaboral);
+        $sql->bindParam(':fecha', $fechaPostulacion);
+        if ($sql->execute()) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
     public function obtenerOfertaLaboralEspecifica($idOfertaLaboral, $conexion)
     {
-        $sql = $conexion->prepare("SELECT * FROM ofertalaboral WHERE idofertaLaboral = :idofertalaboral");
+        $sql = $conexion->prepare("SELECT * 
+        FROM ofertalaboral
+        INNER JOIN usuarioempresa
+        ON ofertalaboral.usuarioEmpresa_idusuarioEmpresa = usuarioempresa.idusuarioEmpresa
+        WHERE ofertalaboral.idofertaLaboral = :idofertalaboral");
         $sql->bindParam(':idofertalaboral', $idOfertaLaboral);
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -31,6 +48,14 @@ class OfertaLaboralSql
         ON usuariotea.usuario_idusuario = usuario.idusuario
         WHERE postulacion.ofertaLaboral_idofertaLaboral = :idofertalaboral");
         $sql->bindParam(':idofertalaboral', $idOfertaLaboral);
+        $sql->execute();
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
+    public function obtenerTodasLasOfertasLaborales($conexion)
+    {
+        $sql = $conexion->prepare("SELECT * FROM ofertalaboral");
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;

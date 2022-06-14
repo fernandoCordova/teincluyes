@@ -41,7 +41,7 @@ if (isset($_POST['btnRegistro'])) {
                         ];
                         $validarUsuarioRegistro = $objetoUsuario->validarUsuarioRegistro($datosValidacion, $conexion);
                         if ($validarUsuarioRegistro == 0) {
-                            $usuario = new Usuario($_POST['correo'], $_POST['clave'], $_POST['rut'], $_POST['nombres'], $_POST['apellidos'], $create->format('Y-m-d H:i:s'), null, 1, 1);
+                            $usuario = new Usuario($_POST['correo'], $_POST['clave'], $_POST['rut'], $_POST['nombres'], $_POST['apellidos'], $create->format('Y-m-d H:i:s'), null, 1, 2);
                             $insertarUsuario = $objetoUsuario->insertarUsuario($usuario, $conexion);
                             if ($insertarUsuario == 1) {
                                 $datosCertificadoTea = [

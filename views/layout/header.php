@@ -48,7 +48,7 @@
                                 </form>
                                 <form action="http://localhost/teincluyes/controladorTrabajo" method="post">
                                     <li class="nav-item">
-                                        <button class="btn botones-navbar" name="btnIniciarSesion" value="inicioSesion">
+                                        <button class="btn botones-navbar" name="btnOfertaLaboral" value="verOfertasLaborales">
                                             <i class="bi bi-search"></i> Buscar trabajo
                                         </button>
                                     </li>
