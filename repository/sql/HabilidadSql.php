@@ -23,7 +23,7 @@ class HabilidadSql
 
     public function insertarHabilidadUsuario($idhabilidad,$idcurriculum,$conexion)
     {
-        $sql = $conexion->prepare('INSERT INTO `habilidadUsuario`(`habilidad_idhabilidad`, `curriculum_idcurriculum`) VALUES (:idhabilidad,:idcurriculum)');
+        $sql = $conexion->prepare('INSERT INTO `habilidadusuario`(`habilidad_idhabilidad`, `curriculum_idcurriculum`) VALUES (:idhabilidad,:idcurriculum)');
         $sql->bindParam(':idhabilidad', $idhabilidad);
         $sql->bindParam(':idcurriculum', $idcurriculum);
         if ($sql->execute()) {

@@ -154,4 +154,13 @@ class OfertaLaboralSql
             return 0;
         }
     }
+
+    public function obtenerPostulacionOfertaLaboral($idcurruclum, $conexion)
+    {
+        $sql = $conexion->prepare('SELECT COUNT(curriculum_idcurriculum) AS cantidad FROM postulacion WHERE curriculum_idcurriculum = :idcurriculum');
+        $sql->bindParam(':idcurriculum', $idcurruclum);
+        $sql->execute();
+        $resultado = $sql->fetch(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
 }

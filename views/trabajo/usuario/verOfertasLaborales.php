@@ -1,6 +1,7 @@
 <?php
 include_once('../../layout/header.php');
 $obtenerTodasLasOfertasLaborales = $_SESSION['obtenerTodasLasOfertasLaborales'];
+print_r($_SESSION['usuario']);
 ?>
 <link rel="stylesheet" href="http://localhost/teincluyes/css/curriculum/curriculum.css">
 <section class="pb-5 estilos-header" id="cv">
@@ -13,6 +14,12 @@ $obtenerTodasLasOfertasLaborales = $_SESSION['obtenerTodasLasOfertasLaborales'];
                 <div class="alert alert-primary" role="alert">
                     <strong> <?php echo $_SESSION['exito'] ?> </strong>
                     <?php unset($_SESSION['exito']) ?>
+                </div>
+            <?php } ?>
+            <?php if (isset($_SESSION['error'])) { ?>
+                <div class="alert alert-primary" role="alert">
+                    <strong> <?php echo $_SESSION['error'] ?> </strong>
+                    <?php unset($_SESSION['error']) ?>
                 </div>
             <?php } ?>
         </div>

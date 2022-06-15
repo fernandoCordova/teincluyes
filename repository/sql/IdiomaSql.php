@@ -12,7 +12,7 @@ class IdiomaSql
 
     public function insertarIdiomaUsuario($ididioma, $idcurriculum, $conexion)
     {
-        $sql = $conexion->prepare('INSERT INTO `idiomaUsuario`(`idioma_ididioma`, `curriculum_idcurriculum`) VALUES (:ididioma,:idcurriculum)');
+        $sql = $conexion->prepare('INSERT INTO `idiomausuario`(`idioma_ididioma`, `curriculum_idcurriculum`) VALUES (:ididioma,:idcurriculum)');
         $sql->bindParam(':ididioma', $ididioma);
         $sql->bindParam(':idcurriculum', $idcurriculum);
         if ($sql->execute()) {

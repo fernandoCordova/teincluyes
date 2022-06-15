@@ -13,7 +13,7 @@ class ExperienciaLaboralSql
         $jerarquiaEmpresa_idjerarquiaEmpresa = $experienciaLaboral->getJerarquiaEmpresa_idjerarquiaEmpresa();
         $actividadEmpresa_idactividadEmpresa = $experienciaLaboral->getActividadEmpresa_idactividadEmpresa();
         $curriculum_idcurriculum = $experienciaLaboral->getCurriculum_idcurriculum();
-        $sql = $conexion->prepare('INSERT INTO experienciaLaboral (cargo, nombreEmpresa, fechaInicio, fechaTermino, continuidad, descripcion, tipoTrabajo_idtipoTrabajo, jerarquiaEmpresa_idjerarquiaEmpresa, actividadEmpresa_idactividadEmpresa,curriculum_idcurriculum) 
+        $sql = $conexion->prepare('INSERT INTO experiencialaboral (cargo, nombreEmpresa, fechaInicio, fechaTermino, continuidad, descripcion, tipoTrabajo_idtipoTrabajo, jerarquiaEmpresa_idjerarquiaEmpresa, actividadEmpresa_idactividadEmpresa,curriculum_idcurriculum) 
         VALUES (:cargo, :nombreEmpresa, :fechaInicio, :fechaTermino, :continuidad, :descripcion, :tipoTrabajo_idtipoTrabajo, :jerarquiaEmpresa_idjerarquiaEmpresa, :actividadEmpresa_idactividadEmpresa,:curriculum_idcurriculum)');
         $sql->bindParam(':cargo', $cargo);
         $sql->bindParam(':nombreEmpresa', $nombreEmpresa);
@@ -44,7 +44,7 @@ class ExperienciaLaboralSql
         $jerarquiaEmpresa_idjerarquiaEmpresa = $experienciaLaboral->getJerarquiaEmpresa_idjerarquiaEmpresa();
         $actividadEmpresa_idactividadEmpresa = $experienciaLaboral->getActividadEmpresa_idactividadEmpresa();
         $curriculum_idcurriculum = $experienciaLaboral->getCurriculum_idcurriculum();
-        $sql = $conexion->prepare('UPDATE experienciaLaboral SET cargo = :cargo, nombreEmpresa = :nombreEmpresa, fechaInicio = :fechaInicio, fechaTermino = :fechaTermino, continuidad = :continuidad, descripcion = :descripcion, tipoTrabajo_idtipoTrabajo = :tipoTrabajo_idtipoTrabajo, jerarquiaEmpresa_idjerarquiaEmpresa = :jerarquiaEmpresa_idjerarquiaEmpresa, actividadEmpresa_idactividadEmpresa = :actividadEmpresa_idactividadEmpresa, curriculum_idcurriculum = :curriculum_idcurriculum WHERE idExperienciaLaboral = :idExperienciaLaboral');
+        $sql = $conexion->prepare('UPDATE experiencialaboral SET cargo = :cargo, nombreEmpresa = :nombreEmpresa, fechaInicio = :fechaInicio, fechaTermino = :fechaTermino, continuidad = :continuidad, descripcion = :descripcion, tipoTrabajo_idtipoTrabajo = :tipoTrabajo_idtipoTrabajo, jerarquiaEmpresa_idjerarquiaEmpresa = :jerarquiaEmpresa_idjerarquiaEmpresa, actividadEmpresa_idactividadEmpresa = :actividadEmpresa_idactividadEmpresa, curriculum_idcurriculum = :curriculum_idcurriculum WHERE idExperienciaLaboral = :idExperienciaLaboral');
         $sql->bindParam(':cargo', $cargo);
         $sql->bindParam(':nombreEmpresa', $nombreEmpresa);
         $sql->bindParam(':fechaInicio', $fechaIncio);
@@ -65,7 +65,7 @@ class ExperienciaLaboralSql
 
     public function eliminarExperienciaLaboral($idexperiencialaboral, $conexion)
     {
-        $sql = $conexion->prepare('DELETE FROM experienciaLaboral WHERE idExperienciaLaboral = :idExperienciaLaboral');
+        $sql = $conexion->prepare('DELETE FROM experiencialaboral WHERE idExperienciaLaboral = :idExperienciaLaboral');
         $sql->bindParam(':idExperienciaLaboral', $idexperiencialaboral);
         if ($sql->execute()) {
             return 1;
@@ -76,7 +76,7 @@ class ExperienciaLaboralSql
 
     public function obtenerExperienciaLaboral($idexperiencialaboral, $conexion)
     {
-        $sql = $conexion->prepare('SELECT * FROM experienciaLaboral
+        $sql = $conexion->prepare('SELECT * FROM experiencialaboral
         INNER JOIN tipotrabajo
         ON experiencialaboral.tipoTrabajo_idtipoTrabajo = tipotrabajo.idtipoTrabajo
         INNER JOIN actividadempresa

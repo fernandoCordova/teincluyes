@@ -34,7 +34,7 @@ class UsuarioSql
     public function obtenerIdioma($idcurriculum,$conexion)
     {
         $sql = $conexion->prepare('SELECT * 
-        FROM idiomaUsuario 
+        FROM idiomausuario 
         INNER JOIN idioma
         ON idiomausuario.idioma_ididioma = idioma.ididioma
         WHERE curriculum_idcurriculum = :idcurriculum');
@@ -47,7 +47,7 @@ class UsuarioSql
     public function obtenerHabilidad($idcurriculum,$conexion)
     {
         $sql = $conexion->prepare('SELECT habilidad.idhabilidad ,habilidad.nombreHabilidad 
-        FROM habilidadUsuario 
+        FROM habilidadusuario 
         INNER JOIN habilidad ON habilidadUsuario.habilidad_idhabilidad = habilidad.idhabilidad 
         WHERE habilidadUsuario.curriculum_idcurriculum = :idcurriculum');
         $sql->bindParam(':idcurriculum', $idcurriculum);

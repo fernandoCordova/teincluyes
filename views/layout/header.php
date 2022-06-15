@@ -55,7 +55,7 @@
                                 </form>
                                 <form action="http://localhost/teincluyes/controladorForo" method="post">
                                     <li class="nav-item">
-                                        <button class="btn botones-navbar" name="btnIniciarSesion" value="inicioSesion">
+                                        <button class="btn botones-navbar" name="btnForo" value="foro">
                                             <i class="bi bi-chat-left-text"></i> Foro de la comunidad
                                         </button>
                                     </li>

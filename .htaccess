@@ -29,6 +29,9 @@ RewriteRule ^empresa/verDetallesOfertaLaboral$ views/trabajo/empresa/verOfertaLa
 RewriteRule ^empresa/perfil$ views/trabajo/empresa/empresa.php
 RewriteRule ^administrador/certificados$ views/administrador/validarCertificados.php
 RewriteRule ^usuario/verOfertasLaborales$ views/trabajo/usuario/verOfertasLaborales.php
+RewriteRule ^usuario/foroDeComunidad$ views/foro/foro.php
+RewriteRule ^usuario/topico/contenido$ views/foro/detallesTopico.php
+RewriteRule ^usuario/topico/agregar$ views/foro/agregarTopico.php
 #Rutas para los controladores
 RewriteRule ^controladorInicio$ controller/InicioController.php
 RewriteRule ^controladorInicioSesion$ controller/InicioSesionController.php

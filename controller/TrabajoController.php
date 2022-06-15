@@ -136,21 +136,28 @@ if (isset($_POST['btnOfertaLaboral'])) {
         case 'postularOfertaLaboral':
             if (isset($_POST['idOfertaLaboral']) && isset($_POST['idCurriculum'])) {
                 if ($_POST['idOfertaLaboral'] != '' && $_POST['idCurriculum'] != '') {
-                    $ingresarPostulacionLaboral = $objetoOfertaLaboralSql->ingresarPostulacionLaboral($_POST['idCurriculum'],$_POST['idOfertaLaboral'], $fecha->format('Y-m-d H:i:s'), $conexion);
-                    if ($ingresarPostulacionLaboral == 1) {
-                        $_SESSION['exito'] = "Se postulo con exito a la oferta laboral";
+                    $obtenerPostulacionOfertaLaboral = $objetoOfertaLaboralSql->obtenerPostulacionOfertaLaboral($_POST['idCurriculum'], $conexion);
+                    print_r($obtenerPostulacionOfertaLaboral);
+                    if ($obtenerPostulacionOfertaLaboral['cantidad'] == 0) {
+                        $ingresarPostulacionLaboral = $objetoOfertaLaboralSql->ingresarPostulacionLaboral($_POST['idCurriculum'], $_POST['idOfertaLaboral'], $fecha->format('Y-m-d H:i:s'), $conexion);
+                        if ($ingresarPostulacionLaboral == 1) {
+                            $_SESSION['exito'] = "Se postulo con exito a la oferta laboral";
+                            header('Location: http://localhost/teincluyes/usuario/verOfertasLaborales');
+                        } else {
+                            $_SESSION['error'] = "No se pudo postular la oferta laboral";
+                            header('Location: http://localhost/teincluyes/usuario/verOfertasLaborales');
+                        }
+                    } else {
+                        $_SESSION['error'] = "Ya se postulo a esta oferta laboral";
                         header('Location: http://localhost/teincluyes/usuario/verOfertasLaborales');
-                    }else{
-                        $_SESSION['error'] = "No se pudo postular la oferta laboral";
-                        header('Location: http://localhost/teincluyes/trabajo/verOfertasLaborales');
                     }
-                }else{
+                } else {
                     $_SESSION['error'] = "Debe completar todos los campos";
-                    header('Location: http://localhost/teincluyes/empresa/perfil');
+                    header('Location: http://localhost/teincluyes/usuario/verOfertasLaborales');
                 }
-            }else{
+            } else {
                 $_SESSION['error'] = "Debe completar todos los campos";
-                header('Location: http://localhost/teincluyes/empresa/perfil');
+                header('Location: http://localhost/teincluyes/usuario/verOfertasLaborales');
             }
             break;
     }
