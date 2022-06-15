@@ -5,6 +5,24 @@ $usuariosTea = $_SESSION['usuariosTea'];
 <link rel="stylesheet" href="http://localhost/teincluyes/css/curriculum/curriculum.css">
 <section class="pb-5 estilos-header" id="cv">
     <div class="container px-5 my-5">
+        <?php if (isset($_SESSION['errorValidarCertificado'])) { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php
+                print_r($_SESSION['errorValidarCertificado']);
+                unset($_SESSION['errorValidarCertificado']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
+        <?php if (isset($_SESSION['exitoValidarCertificado'])) { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php
+                print_r($_SESSION['exitoValidarCertificado']);
+                unset($_SESSION['exitoValidarCertificado']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
         <div class="my-4">
             <table id="table_id" class="display">
                 <thead>

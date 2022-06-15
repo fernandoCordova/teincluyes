@@ -1,7 +1,6 @@
 <?php
 include_once('../../layout/header.php');
 $obtenerTodasLasOfertasLaborales = $_SESSION['obtenerTodasLasOfertasLaborales'];
-print_r($_SESSION['usuario']);
 ?>
 <link rel="stylesheet" href="http://localhost/teincluyes/css/curriculum/curriculum.css">
 <section class="pb-5 estilos-header" id="cv">
@@ -10,16 +9,16 @@ print_r($_SESSION['usuario']);
             <h2>Ver ofertas laborales</h2>
         </div>
         <div>
-            <?php if (isset($_SESSION['exito'])) { ?>
-                <div class="alert alert-primary" role="alert">
-                    <strong> <?php echo $_SESSION['exito'] ?> </strong>
-                    <?php unset($_SESSION['exito']) ?>
+            <?php if (isset($_SESSION['exitoOfertaLaboral'])) { ?>
+                <div class="alert alert-success" role="alert">
+                    <strong> <?php echo $_SESSION['exitoOfertaLaboral'] ?> </strong>
+                    <?php unset($_SESSION['exitoOfertaLaboral']) ?>
                 </div>
             <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-primary" role="alert">
-                    <strong> <?php echo $_SESSION['error'] ?> </strong>
-                    <?php unset($_SESSION['error']) ?>
+            <?php if (isset($_SESSION['errorOfertaLaboral'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <strong> <?php echo $_SESSION['errorOfertaLaboral'] ?> </strong>
+                    <?php unset($_SESSION['errorOfertaLaboral']) ?>
                 </div>
             <?php } ?>
         </div>

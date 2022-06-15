@@ -20,17 +20,18 @@ if (isset($_POST['btnAdministrador'])) {
                     if ($cambiarEstadoUsuario == 1) {
                         $obtenerUsuariosTea = $objetoUsuarioTea->obtenerUsuariosTea($conexion);
                         $_SESSION['usuariosTea'] = $obtenerUsuariosTea;
+                        $_SESSION['exitoValidarCertificado'] = 'Se cambio el estado del usuario correctamente';
                         header('Location: http://localhost/teincluyes/administrador/certificados');
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar el idioma';
+                        $_SESSION['errorValidarCertificado'] = 'Error en el servidor al cambiar el estado del usuario';
                         header('Location: http://localhost/teincluyes/administrador/certificados');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar el idioma';
+                    $_SESSION['errorValidarCertificado'] = 'No se encontro la variable idusuario';
                     header('Location: http://localhost/teincluyes/administrador/certificados');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar el idioma';
+                $_SESSION['errorValidarCertificado'] = 'No se encontro la variable idusuario';
                 header('Location: http://localhost/teincluyes/administrador/certificados');
             }
             break;

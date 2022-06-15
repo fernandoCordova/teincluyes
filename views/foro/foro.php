@@ -8,14 +8,24 @@ $obtenerTodosLosTopicos = $_SESSION['obtenerTodosLosTopicos'];
         <div class="mb-5">
             <h2>Foro de la comunidad - Topicos</h2>
         </div>
-        <div>
-            <?php if (isset($_SESSION['exito'])) { ?>
-                <div class="alert alert-primary" role="alert">
-                    <strong> <?php echo $_SESSION['exito'] ?> </strong>
-                    <?php unset($_SESSION['exito']) ?>
-                </div>
-            <?php } ?>
-        </div>
+        <?php if (isset($_SESSION['errorTopico'])) { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php
+                print_r($_SESSION['errorTopico']);
+                unset($_SESSION['errorTopico']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
+        <?php if (isset($_SESSION['exitoTopico'])) { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php
+                print_r($_SESSION['exitoTopico']);
+                unset($_SESSION['exitoTopico']);
+                ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
         <div>
             <form action="http://localhost/teincluyes/controladorForo" method="post">
                 <button class="btn botones" name="btnForo" value="publicarTopico">Publicar topico</button>

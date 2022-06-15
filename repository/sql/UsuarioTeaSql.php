@@ -70,7 +70,7 @@ class UsuarioTeaSql
                 $i++;
                 $reversedParts = explode('.', strrev($name), 2);
                 $tname = (strrev($reversedParts[1])) . "_" . ($i) . '.' . (strrev($reversedParts[0]));
-                $chk2 = $conexion->query("SELECT * FROM  certificadotea where name = '$tname' ")->rowCount();
+                $chk2 = $conexion->query("SELECT * FROM  certificadotea WHERE nombre = '$tname' ")->rowCount();
                 if ($chk2 == 0) {
                     $c = 1;
                     $name = $tname;

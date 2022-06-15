@@ -75,15 +75,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['usuario'] = $obtenerDatosUsuarioTea;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al actualizar el curriculum 2';
+                        $_SESSION['errorCurriculum'] = 'Error al actualizar el curriculum 2';
                         header('Location: http://localhost/teincluyes/informacionPersonal/editar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al actualizar el curriculum 1';
+                    $_SESSION['errorCurriculum'] = 'Error al actualizar el curriculum 1';
                     header('Location: http://localhost/teincluyes/informacionPersonal/editar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al actualizar el curriculum';
+                $_SESSION['errorCurriculum'] = 'Error al actualizar el curriculum';
                 header('Location: http://localhost/teincluyes/informacionPersonal/editar');
             }
             break;
@@ -111,15 +111,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['experienciasLaborales'] = $obtenerExperienciasLaboralesUsuariosTea;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                     header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                 header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
             }
             break;
@@ -140,11 +140,11 @@ if (isset($_POST['btnCurriculum'])) {
                     $_SESSION['experienciaLaboral'] = $obtenerExperienciaLaboral;
                     header('Location: http://localhost/teincluyes/experienciaLaboral/editar');
                 } else {
-                    $_SESSION['error'] = 'Error al obtener la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al obtener la experiencia laboral';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al ver los detalles de la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al ver los detalles de la experiencia laboral';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;
@@ -163,15 +163,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['experienciasLaborales'] = $obtenerExperienciasLaboralesUsuariosTea;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                     header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                 header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
             }
             break;
@@ -189,15 +189,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['experienciasLaborales'] = $obtenerExperienciasLaboralesUsuariosTea;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/curriculum');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;
@@ -230,15 +230,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['formacionAcademica'] = $obtenerFormacionAcademica;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/experienciaLaboral/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar la formación académica';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar la formación académica';
                     header('Location: http://localhost/teincluyes/formacionAcademica/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar la formacion academica';
+                $_SESSION['errorCurriculum'] = 'Error al agregar la formacion academica';
                 header('Location: http://localhost/teincluyes/formacionAcademica/agregar');
             }
             break;
@@ -259,11 +259,11 @@ if (isset($_POST['btnCurriculum'])) {
                     $_SESSION['formacionAcademicaEspecifica'] = $obtenerFormacionAcademica;
                     header('Location: http://localhost/teincluyes/formacionAcademica/editar');
                 } else {
-                    $_SESSION['error'] = 'Error al obtener la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al obtener la experiencia laboral';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al ver los detalles de la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al ver los detalles de la experiencia laboral';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;
@@ -287,15 +287,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['formacionAcademica'] = $obtenerFormacionAcademica;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al agregar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/experienciaLaboral/editar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar la formación académica';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar la formación académica';
                     header('Location: http://localhost/teincluyes/formacionAcademica/editar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar la formacion academica';
+                $_SESSION['errorCurriculum'] = 'Error al agregar la formacion academica';
                 header('Location: http://localhost/teincluyes/formacionAcademica/editar');
             }
             break;
@@ -313,15 +313,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['formacionAcademica'] = $obtenerFormacionAcademica;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                        $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                         header('Location: http://localhost/teincluyes/curriculum');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                    $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar la experiencia laboral';
+                $_SESSION['errorCurriculum'] = 'Error al eliminar la experiencia laboral';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;
@@ -346,15 +346,15 @@ if (isset($_POST['btnCurriculum'])) {
                             header('Location: http://localhost/teincluyes/curriculum');
                         }
                     } else {
-                        $_SESSION['error'] = 'Error al agregar la habilidad';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar la habilidad';
                         header('Location: http://localhost/teincluyes/habilidad/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar la habilidad';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar la habilidad';
                     header('Location: http://localhost/teincluyes/habilidad/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar la habilidad';
+                $_SESSION['errorCurriculum'] = 'Error al agregar la habilidad';
                 header('Location: http://localhost/teincluyes/habilidad/agregar');
             }
             break;
@@ -374,19 +374,19 @@ if (isset($_POST['btnCurriculum'])) {
                             $_SESSION['habilidades'] = $obtenerHabilidades;
                             header('Location: http://localhost/teincluyes/curriculum');
                         } else {
-                            $_SESSION['error'] = 'Error al eliminar la habilidad';
+                            $_SESSION['errorCurriculum'] = 'Error al eliminar la habilidad';
                             header('Location: http://localhost/teincluyes/curriculum');
                         }
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar la habilidad';
+                        $_SESSION['errorCurriculum'] = 'Error al eliminar la habilidad';
                         header('Location: http://localhost/teincluyes/curriculum');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar la habilidad';
+                    $_SESSION['errorCurriculum'] = 'Error al eliminar la habilidad';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar la habilidad';
+                $_SESSION['errorCurriculum'] = 'Error al eliminar la habilidad';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;
@@ -409,15 +409,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['idiomasUsuario'] = $obtenerIdiomas;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al agregar el idioma';
+                        $_SESSION['errorCurriculum'] = 'Error al agregar el idioma';
                         header('Location: http://localhost/teincluyes/idioma/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al agregar el idioma';
+                    $_SESSION['errorCurriculum'] = 'Error al agregar el idioma';
                     header('Location: http://localhost/teincluyes/idioma/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al agregar el idioma';
+                $_SESSION['errorCurriculum'] = 'Error al agregar el idioma';
                 header('Location: http://localhost/teincluyes/idioma/agregar');
             }
             break;
@@ -435,15 +435,15 @@ if (isset($_POST['btnCurriculum'])) {
                         $_SESSION['idiomasUsuario'] = $obtenerIdiomas;
                         header('Location: http://localhost/teincluyes/curriculum');
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar el idioma';
+                        $_SESSION['errorCurriculum'] = 'Error al eliminar el idioma';
                         header('Location: http://localhost/teincluyes/curriculum');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar el idioma';
+                    $_SESSION['errorCurriculum'] = 'Error al eliminar el idioma';
                     header('Location: http://localhost/teincluyes/curriculum');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar el idioma';
+                $_SESSION['errorCurriculum'] = 'Error al eliminar el idioma';
                 header('Location: http://localhost/teincluyes/curriculum');
             }
             break;

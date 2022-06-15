@@ -36,14 +36,15 @@ $obtenerCategorias = $_SESSION['obtenerCategorias'];
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <?php if (isset($_SESSION['error'])) { ?>
-                            <div class="alert alert-danger" role="alert">
-                                <strong> <?php echo $_SESSION['error'] ?> </strong>
-                                <?php unset($_SESSION['error']) ?>
-                            </div>
-                        <?php } ?>
-                    </div>
+                    <?php if (isset($_SESSION['errorTopico'])) { ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <?php
+                            print_r($_SESSION['errorTopico']);
+                            unset($_SESSION['errorTopico']);
+                            ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <?php } ?>
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <button class="btn botones" type="submit" name="btnForo" value="foro">Cancelar</button>

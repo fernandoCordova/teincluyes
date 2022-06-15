@@ -13,7 +13,7 @@ $comentariosTopico = $_SESSION['comentariosTopico'];
                         <?php echo $topicoEspecifico[0]['nombre'] ?>
                     </h2>
                     <h6><?php echo $topicoEspecifico[0]['fechaPublicacion'] ?></h6>
-                    <h4><?php echo 'Categoria: '.$topicoEspecifico[0]['nombreCategoria'] ?></h4>
+                    <h4><?php echo 'Categoria: ' . $topicoEspecifico[0]['nombreCategoria'] ?></h4>
                 </div>
                 <div>
                     <p>
@@ -46,6 +46,15 @@ $comentariosTopico = $_SESSION['comentariosTopico'];
                         <hr>
                     <?php } ?>
                     <div>
+                        <?php if (isset($_SESSION['errorTopico'])) { ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?php
+                                print_r($_SESSION['errorTopico']);
+                                unset($_SESSION['errorTopico']);
+                                ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php } ?>
                         <form action="http://localhost/teincluyes/controladorForo" method="post">
                             <textarea class="form-control" name="contenido" cols="30" rows="5"></textarea>
                             <input type="hidden" name="idUsuarioTea" value="<?php echo $_SESSION['usuario']['idusuarioTea'] ?>">

@@ -5,6 +5,20 @@ $postulantes = $_SESSION['postulantes'];
 <link rel="stylesheet" href="http://localhost/teincluyes/css/curriculum/curriculum.css">
 <section class="pb-5 estilos-header" id="cv">
     <div class="container px-5 my-5">
+        <div>
+            <?php if (isset($_SESSION['exitoOfertaLaboral'])) { ?>
+                <div class="alert alert-success" role="alert">
+                    <strong> <?php echo $_SESSION['exitoOfertaLaboral'] ?> </strong>
+                    <?php unset($_SESSION['exitoOfertaLaboral']) ?>
+                </div>
+            <?php } ?>
+            <?php if (isset($_SESSION['errorOfertaLaboral'])) { ?>
+                <div class="alert alert-danger" role="alert">
+                    <strong> <?php echo $_SESSION['errorOfertaLaboral'] ?> </strong>
+                    <?php unset($_SESSION['errorOfertaLaboral']) ?>
+                </div>
+            <?php } ?>
+        </div>
         <div class="my-4">
             <table id="table_id" class="display">
                 <thead>
@@ -25,7 +39,7 @@ $postulantes = $_SESSION['postulantes'];
                                     <button class="btn botones-enlace-ofertasLaborales" name="btnOfertaLaboral" value="verPerfilPostulante">
                                         <?php echo $postulante['nombres'] . ' ' . $postulante['apellidos'] ?>
                                     </button>
-                                    <input type="hidden" name="idPostulante" value="<?php echo $postulante['idcurriculum']?>">
+                                    <input type="hidden" name="idPostulante" value="<?php echo $postulante['idcurriculum'] ?>">
                                 </form>
                             </td>
                             <td><?php echo $postulante['correo'] ?></td>

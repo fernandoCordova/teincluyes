@@ -72,38 +72,38 @@ if (isset($_POST['btnRegistro'])) {
                                         $curriculum = new Curriculum('', '', '', '', '', '', '', '', '', '', '1', '1', '1', $idUsuarioTea);
                                         $insertarCurriculum = $objetoCurriculum->insertarCurriculum($curriculum, $conexion);
                                         if ($insertarCurriculum == 1) {
-                                            $_SESSION['exito'] = 'Usuario registrado correctamente';
+                                            $_SESSION['exitoRegistro'] = 'Usuario registrado correctamente';
                                             header('Location: http://localhost/teincluyes/inicioSesion');
                                         } else {
-                                            $_SESSION['error'] = 'Error al registrar curriculum';
+                                            $_SESSION['errorRegistroUsuario'] = 'Error al registrar curriculum';
                                             header('Location: http://localhost/teincluyes/registro/usuario');
                                         }
                                     } else {
-                                        $_SESSION['error'] = 'Error al registrar usuario';
+                                        $_SESSION['errorRegistroUsuario'] = 'Error al registrar usuario';
                                         header('Location: http://localhost/teincluyes/registro/usuario');
                                     }
                                 } else {
-                                    $_SESSION['error'] = 'No se pudo subir el certificado';
+                                    $_SESSION['errorRegistroUsuario'] = 'No se pudo subir el certificado';
                                     header('Location: http://localhost/teincluyes/registro/usuario');
                                 }
                             } else {
-                                $_SESSION['error'] = 'Error al registrar usuario';
+                                $_SESSION['errorRegistroUsuario'] = 'Error al registrar usuario';
                                 header('Location: http://localhost/teincluyes/registro/usuario');
                             }
                         } else {
-                            $_SESSION['error'] = 'El correo o rut ya se encuentra registrado';
+                            $_SESSION['errorRegistroUsuario'] = 'El correo o rut ya se encuentra registrado';
                             header('Location: http://localhost/teincluyes/registro/usuario');
                         }
                     } else {
-                        $_SESSION['error'] = 'El archivo no es un PDF';
+                        $_SESSION['errorRegistroUsuario'] = 'El archivo no es un PDF';
                         header('Location: http://localhost/teincluyes/registro/usuario');
                     }
                 } else {
-                    $_SESSION['error'] = 'Debe llenar todos los campos';
+                    $_SESSION['errorRegistroUsuario'] = 'Debe llenar todos los campos';
                     header('Location: http://localhost/teincluyes/registro/usuario');
                 }
             } else {
-                $_SESSION['error'] = 'Error al registrar usuario';
+                $_SESSION['errorRegistroUsuario'] = 'Error al registrar usuario';
                 header('Location: http://localhost/teincluyes/registro/usuario');
             }
             break;
@@ -128,26 +128,26 @@ if (isset($_POST['btnRegistro'])) {
                             $usuarioEmpresa = new UsuarioEmpresa($_POST['nombreEmpresa'], $_POST['telefono'], $obtenerIdUsuario['idusuario']);
                             $insertarUsuarioEmpresa = $objetoUsuarioEmpresa->insertarUsuarioEmpresa($usuarioEmpresa, $conexion);
                             if ($insertarUsuarioEmpresa == 1) {
-                                $_SESSION['exito'] = 'Usuario registrado correctamente';
+                                $_SESSION['exitoRegistro'] = 'Usuario registrado correctamente';
                                 header('Location: http://localhost/teincluyes/inicioSesion');
                             } else {
-                                $_SESSION['error'] = 'Error al registrar usuario';
+                                $_SESSION['errorRegistroEmpresa'] = 'Error al registrar usuario';
                                 header('Location: http://localhost/teincluyes/registro/empresa');
                             }
                         } else {
-                            $_SESSION['error'] = 'Error al registrar usuario';
+                            $_SESSION['errorRegistroEmpresa'] = 'Error al registrar usuario';
                             header('Location: http://localhost/teincluyes/registro/empresa');
                         }
                     } else {
-                        $_SESSION['error'] = 'El correo, rut o nombre de la empresa ya se encuentra registrado';
+                        $_SESSION['errorRegistroEmpresa'] = 'El correo, rut o nombre de la empresa ya se encuentra registrado';
                         header('Location: http://localhost/teincluyes/registro/empresa');
                     }
                 } else {
-                    $_SESSION['error'] = 'Debe llenar todos los campos';
+                    $_SESSION['errorRegistroEmpresa'] = 'Debe llenar todos los campos';
                     header('Location: http://localhost/teincluyes/registro/empresa');
                 }
             } else {
-                $_SESSION['error'] = 'Error al registrar la empresa';
+                $_SESSION['errorRegistroEmpresa'] = 'Error al registrar la empresa';
                 header('Location: http://localhost/teincluyes/registro/empresa');
             }
             break;

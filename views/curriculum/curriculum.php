@@ -8,6 +8,12 @@ $idiomas = $_SESSION['idiomasUsuario'];
 <link rel="stylesheet" href="http://localhost/teincluyes/css/curriculum/curriculum.css">
 <section class="pb-5 estilos-header" id="cv">
     <div class="container px-5 my-5">
+        <?php if (isset($_SESSION['errorCurriculum'])) { ?>
+            <div class="alert alert-danger" role="alert">
+                <strong> <?php echo $_SESSION['errorCurriculum'] ?> </strong>
+                <?php unset($_SESSION['errorCurriculum']) ?>
+            </div>
+        <?php } ?>
         <div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0 estilo-informacion-personal">
                 <div>

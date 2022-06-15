@@ -33,18 +33,18 @@ if (isset($_POST['btnForo'])) {
                     if ($insertarTopico == 1) {
                         $obtenerTodosLosTopicos = $objetoTopico->obtenerTodosLosTopicos($conexion);
                         $_SESSION['obtenerTodosLosTopicos'] = $obtenerTodosLosTopicos;
-                        $_SESSION['exito'] = 'El topico se ha publicado correctamente';
+                        $_SESSION['exitoTopico'] = 'El topico se ha publicado correctamente';
                         header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                     } else {
-                        $_SESSION['error'] = 'Error con el servidor, no se pudo publicar el topico';
+                        $_SESSION['errorTopico'] = 'Error con el servidor, no se pudo publicar el topico';
                         header('Location: http://localhost/teincluyes/usuario/topico/agregar');
                     }
                 } else {
-                    $_SESSION['error'] = 'Debe completar todos los campos';
+                    $_SESSION['errorTopico'] = 'Todos los campos son requeridos';
                     header('Location: http://localhost/teincluyes/usuario/topico/agregar');
                 }
             } else {
-                $_SESSION['error'] = 'Error al publicar el topico';
+                $_SESSION['errorTopico'] = 'Todos los campos son requeridos';
                 header('Location: http://localhost/teincluyes/usuario/topico/agregar');
             }
             break;
@@ -57,11 +57,11 @@ if (isset($_POST['btnForo'])) {
                     $_SESSION['comentariosTopico'] = $comentariosTopico;
                     header('Location: http://localhost/teincluyes/usuario/topico/contenido');
                 } else {
-                    $_SESSION['error'] = 'Error al ver los detalles del topico';
+                    $_SESSION['errorTopico'] = 'Error al ver los detalles del topico';
                     header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                 }
             } else {
-                $_SESSION['error'] = 'Error al ver los detalles del topico';
+                $_SESSION['errorTopico'] = 'Error al ver los detalles del topico';
                 header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
             }
             break;
@@ -72,18 +72,17 @@ if (isset($_POST['btnForo'])) {
                     if ($comentarTopico == 1) {
                         $comentariosTopico = $objetoTopico->comentariosTopico($_POST['idtopico'], $conexion);
                         $_SESSION['comentariosTopico'] = $comentariosTopico;
-                        $_SESSION['exito'] = 'El comentario se ha publicado correctamente';
                         header('Location: http://localhost/teincluyes/usuario/topico/contenido');
                     } else {
-                        $_SESSION['error'] = 'Error con el servidor, no se pudo publicar el comentario';
+                        $_SESSION['errorTopico'] = 'Error con el servidor, no se pudo publicar el comentario';
                         header('Location: http://localhost/teincluyes/usuario/topico/contenido');
                     }
                 } else {
-                    $_SESSION['error'] = 'Debe completar todos los campos';
+                    $_SESSION['errorTopico'] = 'Debe poner un comentario';
                     header('Location: http://localhost/teincluyes/usuario/topico/contenido');
                 }
             } else {
-                $_SESSION['error'] = 'Error al comentar el topico';
+                $_SESSION['errorTopico'] = 'Error al comentar el topico';
                 header('Location: http://localhost/teincluyes/usuario/topico/contenido');
             }
             break;
@@ -96,22 +95,22 @@ if (isset($_POST['btnForo'])) {
                         if ($eliminarTopico == 1) {
                             $obtenerTodosLosTopicos = $objetoTopico->obtenerTodosLosTopicos($conexion);
                             $_SESSION['obtenerTodosLosTopicos'] = $obtenerTodosLosTopicos;
-                            $_SESSION['exito'] = 'El topico se ha eliminado correctamente';
+                            $_SESSION['exitoTopico'] = 'El topico se ha eliminado correctamente';
                             header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                         } else {
-                            $_SESSION['error'] = 'Error con el servidor, no se pudo eliminar el topico';
+                            $_SESSION['errorTopico'] = 'Error con el servidor, no se pudo eliminar el topico';
                             header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                         }
                     } else {
-                        $_SESSION['error'] = 'Error al eliminar los comentarios';
+                        $_SESSION['errorTopico'] = 'Error al eliminar los comentarios';
                         header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                     }
                 } else {
-                    $_SESSION['error'] = 'Error al eliminar el topico';
+                    $_SESSION['errorTopico'] = 'Error al eliminar el topico';
                     header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
                 }
             } else {
-                $_SESSION['error'] = 'Error al eliminar el topico';
+                $_SESSION['errorTopico'] = 'Error al eliminar el topico';
                 header('Location: http://localhost/teincluyes/usuario/foroDeComunidad');
             }
             break;

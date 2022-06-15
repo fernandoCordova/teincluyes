@@ -4,6 +4,12 @@ $idiomas = $_SESSION['idiomas'];
 ?>
 <section class="pb-5" id="informacionPersonal">
     <div class="container px-5 my-5">
+        <?php if (isset($_SESSION['errorCurriculum'])) { ?>
+            <div class="alert alert-danger" role="alert">
+                <strong> <?php echo $_SESSION['errorCurriculum'] ?> </strong>
+                <?php unset($_SESSION['errorCurriculum']) ?>
+            </div>
+        <?php } ?>
         <form action="http://localhost/teincluyes/controladorCurriculum" method="post">
             <div class="row gx-5">
                 <div class="mb-0">

@@ -58,15 +58,15 @@ if (isset($_POST['btnIniciarSesion'])) {
                         $_SESSION['usuario'] = $obtenerDatosUsuario;
                         header('Location: http://localhost/teincluyes/inicio');
                     } else {
-                        $_SESSION['error'] = 'Usuario o contraseña incorrectos';
+                        $_SESSION['errorInicioSesion'] = 'Usuario o contraseña incorrectos';
                         header('Location: http://localhost/teincluyes/inicioSesion');
                     }
                 } else {
-                    $_SESSION['error'] = 'Debe completar todos los campos';
+                    $_SESSION['errorInicioSesion'] = 'Debe completar todos los campos';
                     header('Location: http://localhost/teincluyes/inicioSesion');
                 }
             } else {
-                $_SESSION['error'] = 'No se pudo ingresar a la plataforma';
+                $_SESSION['errorInicioSesion'] = 'No se pudo ingresar a la plataforma';
                 header('Location: http://localhost/teincluyes/inicioSesion');
             }
             break;

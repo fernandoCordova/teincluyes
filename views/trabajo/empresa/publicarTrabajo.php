@@ -7,12 +7,17 @@ include_once('../../layout/header.php');
         <form action="http://localhost/teincluyes/controladorTrabajo" method="post">
             <div class="row gx-5">
                 <div class="col-lg-12 estilo-informacion-general">
-                    <div class="my-4">
-                        <h3>Publicar oferta laboral</h3>
-                        <?php if (isset($_SESSION['exito'])) { ?>
+                    <div>
+                        <?php if (isset($_SESSION['exitoOfertaLaboral'])) { ?>
                             <div class="alert alert-success" role="alert">
-                                <strong><?php echo $_SESSION['exito'] ?></strong>
-                                <?php unset($_SESSION['exito']) ?>
+                                <strong> <?php echo $_SESSION['exitoOfertaLaboral'] ?> </strong>
+                                <?php unset($_SESSION['exitoOfertaLaboral']) ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (isset($_SESSION['errorOfertaLaboral'])) { ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong> <?php echo $_SESSION['errorOfertaLaboral'] ?> </strong>
+                                <?php unset($_SESSION['errorOfertaLaboral']) ?>
                             </div>
                         <?php } ?>
                     </div>

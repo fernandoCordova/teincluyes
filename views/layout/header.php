@@ -14,6 +14,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="http://localhost/teincluyes/css/plantilla-usuario/styles.css" rel="stylesheet" />
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="http://localhost/teincluyes/js/plantilla-usuario/scripts.js"></script>
     <!-- Estilos personalizados-->
     <link href="http://localhost/teincluyes/css/plantilla-usuario/estilos-personalizados.css" rel="stylesheet">
     <!-- Jquery -->
@@ -24,6 +28,8 @@
     <!-- datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <!-- SweetAlert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
